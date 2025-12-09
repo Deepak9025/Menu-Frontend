@@ -13,12 +13,13 @@ function Menu() {
     }
 
     try {
-      const res = await axios.post("https://menu-backend-1-lh87.onrender.com", {
-        day,
-        meal,
-      });
+      const res = await axios.post(
+        "https://menu-backend-1-lh87.onrender.com/api/menu/getMenu",
+        { day, meal }
+      );
 
       setResult(res.data.items);
+
     } catch (error) {
       setResult("Menu not found");
     }
