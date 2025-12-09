@@ -38,10 +38,18 @@
   background-color: rgba(9, 50, 6, 0.7);
   color: white;
 }
+/* =========== GLOBAL =========== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+}
 
-.menu {
+/* =========== BACKGROUND IMAGE =========== */
+.menu, .home {
   width: 100%;
-  min-height: 97vh;
+  min-height: 100vh;
   background-image: url('./assets/image.jpg');
   background-size: cover;
   background-position: center;
@@ -49,159 +57,140 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px;
 }
 
+/* =========== GLASS CARD =========== */
 .border {
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  align-items: center;
-  border-radius: 20px;
-  width: 350px;
-  margin-bottom: 200px;
+  width: 360px;
+  padding: 35px 30px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+
+  border-radius: 25px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+
+  box-shadow: 
+    0px 8px 30px rgba(0,0,0,0.6),
+    0px 0px 30px rgba(0,255,150,0.2);
+
+  animation: slideUp 0.7s ease;
+  color: white;
+  text-align: center;
 }
 
+/* =========== TITLE INSIDE CARD =========== */
+.border h2 {
+  margin: 0 0 15px 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #aefad7;
+  text-shadow: 0px 0px 10px #00ffb2;
+}
+
+/* =========== SELECT DROPDOWN (NEON STYLE) =========== */
 .menu select {
   height: 50px;
-  width: 250px;
-  margin: 10px 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border-radius: 20px;
-  cursor: pointer;
+  width: 85%;
+  margin: 15px auto;
+  border-radius: 12px;
   border: none;
+
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+
+  backdrop-filter: blur(10px);
+  padding: 12px;
   font-size: 16px;
+  cursor: pointer;
+
+  outline: 1.2px solid rgba(0,255,150,0.4);
+  transition: 0.3s ease-in-out;
 }
 
+.menu select:hover {
+  background: rgba(0,0,0,0.75);
+  outline: 1.5px solid #00ff9d;
+  box-shadow: 
+    0px 0px 10px rgba(0,255,150,0.7),
+    0px 0px 18px rgba(0,255,150,0.4);
+}
+
+/* =========== BUTTON (GLOW EFFECT) =========== */
 .menu button {
   height: 50px;
-  width: 200px;
-  margin-top: 10px;
+  width: 85%;
+  margin: 20px auto 10px auto;
+
   border-radius: 30px;
-  background-color: darkcyan;
-  transition: 0.3s ease-in-out;
-  color: white;
   border: none;
-  font-size: 17px;
+
+  background: linear-gradient(135deg, #00ffb2, #00b57a);
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  box-shadow: 
+    0px 0px 12px rgba(0,255,150,0.7),
+    0px 0px 18px rgba(0,255,150,0.3);
 }
 
 .menu button:hover {
-  height: 60px;
-  width: 220px;
-  box-shadow: 5px 5px 7px black;
-  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow:
+    0px 0px 25px rgba(0,255,150,1),
+    0px 0px 40px rgba(0,255,150,0.8);
 }
 
-@media (max-width: 1024px) {
-  .text {
-    padding: 18px 30px;
-    font-size: 20px;
-  }
-
-  .view_name {
-    padding: 12px 30px;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .text {
-    width: 80%;
-    padding: 15px 25px;
-    font-size: 18px;
-  }
-
-  .view_name {
-    width: 60%;
-    padding: 12px 20px;
-    font-size: 17px;
-    margin-bottom: 22%;
-  }
-
-  .border {
-    width: 300px;
-    padding: 20px;
-  }
-
-  .menu select {
-    width: 230px;
-    height: 45px;
-    font-size: 15px;
-  }
-
-  .menu button {
-    width: 180px;
-    height: 45px;
-    font-size: 16px;
-  }
-
-  .menu button:hover {
-    width: 200px;
-    height: 55px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text {
-    width: 85%;
-    padding: 12px 20px;
-    font-size: 16px;
-  }
-
-  .view_name {
-    width: 70%;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-bottom: 30%;
-  }
-
-  .border {
-    width: 90%;
-    padding: 18px;
-  }
-
-  .menu select {
-    width: 90%;
-    height: 45px;
-    font-size: 14px;
-  }
-
-  .menu button {
-    width: 70%;
-    height: 45px;
-    font-size: 15px;
-  }
-
-  .menu button:hover {
-    width: 75%;
-    height: 50px;
-  }
-}
-
-@media (max-width: 360px) {
-  .menu select {
-    height: 40px;
-    font-size: 13px;
-  }
-
-  .menu button {
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .text {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-}
+/* =========== RESULT MESSAGE =========== */
 .result-message {
-  color: #ffffff;
-  margin-top: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: 16px;
-  border-left: 4px solid #4caf50;   /* green highlight */
-  backdrop-filter: blur(4px);
+  width: 90%;
+  margin: 15px auto;
+  padding: 15px;
+
+  background: rgba(0, 0, 0, 0.55);
+  border-left: 5px solid #00ffa6;
+
+  border-radius: 12px;
+  color: #d4ffe9;
+
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease;
+  font-size: 17px;
+}
+
+.result-message h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #aefad7;
+  text-shadow: 0px 0px 10px #00ffb2;
+}
+
+/* =========== ANIMATIONS =========== */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 480px) {
+  .border {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .menu select,
+  .menu button {
+    width: 95%;
+  }
 }
